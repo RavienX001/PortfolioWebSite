@@ -11,7 +11,7 @@
     padding: 0;
     font-family: 'Quicksand', sans-serif;
     box-sizing: border-box;
-    outline: 1px solid red;
+    /*outline: 1px solid red;*/
  }
 
  html {
@@ -26,15 +26,29 @@
     .header-text {
        margin-top: 40%;
     }
-   nav ul {
-    width: 100%;
-    text-align: center;
-  }
 
-  nav ul li {
-    display: block;
-    margin: 10px 0;
-  }
+    nav {
+       width: 95%;
+       padding: 15px;
+       flex-direction: column;
+       gap: 10px;
+    }
+
+    nav ul {
+       /*display: flex;
+       flex-direction: column;
+       align-items: center;*/
+       padding: 0;
+    }
+
+    nav ul li {
+       display: inline-block;
+       margin: 5px 8px;
+    }
+
+    .logo {
+       height: 60px;
+    }
  }
 
  body {
@@ -42,6 +56,14 @@
     color: #ffffff;
     margin: 0;
     padding: 0;
+ }
+
+ #header,
+ #about,
+ #projects,
+ #contactMe {
+    scroll-margin-top: 120px;
+    border-top: 1px solid rgba(180, 212, 255, 0.15);
  }
 
  /*--------------- home------------------*/
@@ -56,26 +78,46 @@
 
  .container {
     padding: 10px 10%;
+    animation: fadeUp 0.8s ease both;
+ }
 
+ @keyframes fadeUp {
+    from {
+       opacity: 0;
+       transform: translateY(30px);
+    }
+
+    to {
+       opacity: 1;
+       transform: translateY(0);
+    }
  }
 
  nav {
-    display: block;
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+
+    display: flex;
     justify-content: space-between;
-    flex-wrap: wrap;
+    align-items: center;
+
     background: rgba(0, 0, 0, 0.45);
     backdrop-filter: blur(10px);
     padding: 10px 30px;
     border-radius: 20px;
-    text-align: center;
-
+    z-index: 1000;
  }
+
 
  .logo {
     height: 80px;
     border-radius: 50%;
     object-fit: contain;
     background: var(--hotPink);
+    border: 2px solid var(--hotPink);
 
  }
 
@@ -93,6 +135,11 @@
 
  }
 
+ nav ul li a:focus {
+    outline: 2px solid var(--accent);
+    outline-offset: 4px;
+ }
+
  nav ul li a::after {
     content: '';
     width: 0;
@@ -108,13 +155,9 @@
     width: 100%;
  }
 
- #header {
-    display: flex;
-    align-items: center;
- }
-
  .header-text {
-    margin-top: 0;
+    padding-top: 120px;
+    font-size: clamp(42px, 6vw, 80px);
  }
 
  .header-text h1 {
@@ -133,7 +176,7 @@
  }
 
  /*--------------- about------------------*/
-AC
+
  #about {
     padding: 120px 0;
  }
@@ -197,14 +240,29 @@ AC
     font-size: 16px;
     color: #ffffff;
     transition: 0.3s;
-   background: rgba(180, 212, 255, 0.1);
-   backdrop-filter: blur(5px);
+    background: rgba(180, 212, 255, 0.1);
+    backdrop-filter: blur(5px);
  }
 
  .skills li:hover {
     background: var(--accent);
     color: #1d1d1d;
     cursor: pointer;
+ }
+
+ .skills li::after {
+    content: "Skill";
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 12px;
+    opacity: 0;
+    transition: 0.3s;
+ }
+
+ .skills li:hover::after {
+    opacity: 0.7;
  }
 
  .about-col-2 p span {
@@ -223,13 +281,13 @@ AC
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 30px;
     margin-top: 40px;
-    
     overflow: hidden;
+    padding: 9px;
  }
 
  .project-card {
-   overflow: hidden;
-   position: relative;
+    overflow: hidden;
+    position: relative;
     background: var(--card);
     border: 1px solid #00224e;
     border-radius: 15px;
@@ -238,7 +296,7 @@ AC
     color: #ffffff;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
  }
- 
+
  .project-card img {
     width: 100%;
     border-radius: 10px;
@@ -259,7 +317,7 @@ AC
  .project-card:hover {
     transform: translateY(-8px);
     box-shadow: 0 12px 30px rgba(0, 110, 255, 0.25);
- }   
+ }
 
  .project-card::after {
     content: "View Project";
@@ -275,16 +333,16 @@ AC
     transition: opacity 0.3s ease;
  }
 
-  .project-card:hover::after {
+ .project-card:hover::after {
     opacity: 1;
     color: var(--text-soft);
  }
 
-  /*--------------- contactMe------------------*/
+ /*--------------- contactMe------------------*/
 
  #contactMe {
-  padding: 120px 0;
-}
+    padding: 120px 0;
+ }
 
  #contactMe .subTitle {
     text-align: center;
