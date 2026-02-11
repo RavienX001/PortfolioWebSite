@@ -113,7 +113,7 @@
  #header {
     width: 100%;
     min-height: 100vh;
-    background-image: url(images/wallpapers.jpg);
+    background-image: url("images/wallpapers.jpg");
     background-size: cover;
     background-position: center;
  }
@@ -157,8 +157,8 @@
     height: 60px;
     border-radius: 50%;
     object-fit: contain;
-    background: var(--hotPink);
-    border: 2px solid var(--hotPink);
+    background: var(--dark);
+    border: 2px solid var(--dark);
  }
 
  nav ul li {
