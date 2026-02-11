@@ -27,8 +27,8 @@
        margin-top: 40%;
     }
 
-        .hamburger {
-        display: flex;
+   .hamburger {
+      display: flex;
     }
 
     nav ul {
@@ -57,7 +57,7 @@
     }
 
  .logo {
-    height: 60px;
+    height: 30px;
  }
 }
 
@@ -138,9 +138,9 @@
  nav {
     position: fixed;
     top: 20px;
-    left: 50%;
+   left: 50%;
     transform: translateX(-50%);
-    width: 80%;
+    width: 100%;
 
     display: flex;
     justify-content: space-between;
@@ -153,14 +153,12 @@
     z-index: 1000;
  }
 
-
  .logo {
-    height: 80px;
+    height: 60px;
     border-radius: 50%;
     object-fit: contain;
     background: var(--hotPink);
     border: 2px solid var(--hotPink);
-
  }
 
  nav ul li {
@@ -174,7 +172,6 @@
     text-decoration: none;
     font-size: 22px;
     position: relative;
-
  }
 
  nav ul li a:focus {
@@ -235,7 +232,7 @@
 
  .about-col-1 img {
     width: 100%;
-    border-radius: 70px;
+    border-radius: 50%;
     box-shadow: 0 20px 40px rgba(0, 110, 255, 0.2);
     transition: transform 0.4s ease;
  }
@@ -316,7 +313,6 @@
  #projects {
     padding: 120px 0;
  }
-
 
  .project-cards {
     display: grid;
