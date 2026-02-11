@@ -77,8 +77,7 @@
  }
 
  /*--------------- menu thing------------------*/
- .hamburger {
-    display: none;
+ .hamburger { 
     flex-direction: column;
     cursor: pointer;
     gap: 6px;
